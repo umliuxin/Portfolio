@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+
+    <title>Static Top Navbar Example for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/MyCss.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+  </head>
+
+  <body>
+    <div id="overlay">
+       Loading...
+    </div>
+    <div class="container" id='welcome-section'>
+        <div class="logo">
+          <img src="image/logo.png" alt='I am Xin Liu'/>
+          <h1 class="center">Hello, I am Xin Liu</h1>
+        </div>
+        <div class="slogan">
+          <h2 class="center">I am passionate in Front End coding and  UI/UX Design.<br>Living in south bay area. </h3>
+        </div>
+        <a href='#works-section' >
+        <div class="scrolldown">
+          <h3 class="center">Scroll Down</h3>
+        </div> </a> 
+    </div><!-- End container -->
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation" id='header-navbar'>
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" id='brand-button'><img src="image/logo.png"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right" id='navi-button'>
+            <li><a href="#works-section">Works</a></li>
+            <li><a href="#about-section">About</a></li>
+            <li><a href="#contact-section">Contact</a></li>
+            <li><a href="#resume-section">Resume</a></li>
+          </ul>
+          
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <!-- End Static navbar -->
+
+    <div class="container" id='works-section'>
+      <div class="section-header section-header-1" style="background-image:url(image/bg/section-header-1.jpg);" >
+        <h1>WORKS</h1>
+      </div>
+      <div class="row">
+        <div class="project-list project-1">
+          <div class="project-detail center">
+            <img class='project-logo' src="image/project/nuwa-logo.png">
+            <h2 class="center">Nuwa</h2>
+          </div>
+        </div>
+        <div class="project-list project-2">
+          <div class="project-detail center">
+            <img class='project-logo' src="image/project/nuwa-logo.png">
+            <h2 class="center">Nuwa</h2>
+          </div>
+        </div>
+        <div class="project-list project-3">
+          <div class="project-detail center">
+            <img class='project-logo' src="image/project/nuwa-logo.png">
+            <h2 class="center">Nuwa</h2>
+          </div>
+        </div>
+        <div class="project-list project-4">
+          <div class="project-detail center">
+            <img class='project-logo' src="image/project/nuwa-logo.png">
+            <h2 class="center">Nuwa</h2>
+          </div>
+        </div>
+        <div class="project-list project-5">
+          <div class="project-detail center">
+            <img class='project-logo' src="image/project/nuwa-logo.png">
+            <h2 class="center">Nuwa</h2>
+          </div>
+        </div>
+        <div class="project-list project-6">
+          <div class="project-detail center">
+            <img class='project-logo' src="image/project/nuwa-logo.png">
+            <h2 class="center">Nuwa</h2>
+          </div>
+        </div>
+
+      </div>
+    </div> <!-- /container -->
+
+    <div class="container" id='about-section'>
+      <div class="section-header section-header-2" style="background-image:url(image/bg/section-header-2.jpg);">
+        <h1>ABOUT</h1>
+      </div>
+      <div class="row about-section main-section">
+        <div class="circle-img"></div>
+        <div class="row" style="margin-top:20px; margin-bottom:20px;">
+          <div class="col-xs-1"></div>
+          <div class="col-xs-3">
+            <a href="https://www.facebook.com/profile.php?id=100003813605853" target='_blank' class='social-img social-img-1'></a>
+            <a href="https://www.linkedin.com/profile/view?id=213094119&trk=nav_responsive_tab_profile" class='social-img social-img-2' target='_blank'></a>
+            <a href="https://twitter.com/without_nth" class='social-img social-img-3' target='_blank'></a>
+            <a target='_blank' href="https://plus.google.com/115961391373383503520/about" class='social-img social-img-4'></a>
+          </div>
+          <div class="col-xs-7">
+            <p class='introduction'>Nam condimentum vulputate neque, sed consequat mi. Maecenas pellentesque elementum libero in pretium. Nulla ullamcorper ac lectus quis vestibulum. Praesent feugiat ultricies velit ac tempus. Quisque lobortis lorem vitae tellus imperdiet, vel sollicitudin quam scelerisque. Ut lacinia ornare dictum. Morbi convallis pretium augue nec congue. Proin tincidunt sodales elit at interdum</p>
+          </div>
+          <div class="col-xs-1"></div>
+        </div>
+        
+      </div>
+      
+    </div> <!-- /container -->
+
+    <div class="container" id='contact-section'>
+      <div class="section-header section-header-3" style="background-image:url(image/bg/section-header-3.jpg);">
+        <h1 style="width:220px;">CONTACT</h1>
+      </div>
+      <div class="row contact-section main-section">
+        <div class="col-sm-6">
+          <h3>Send Me A Message</h3>
+          <p>Aenean non lectus luctus, aliquam lorem id, mollis sem. Vivamus suscipit aliquam ligula, quis porta metus pharetra eget. Aenean sed dictum est</p>
+          <form class="form-signin" role="form">
+            <input type="text" class="form-control" placeholder="Name" required="">
+            <input type="email" class="form-control" placeholder="Email" required="">
+            <textarea class="form-control" placeholder='Message' rows="5" id="comment"></textarea>
+            
+            <button class="btn btn-lg btn-primary btn-block form-control" id='submit-button' type="submit">Send Message</button>
+          </form>
+        </div>
+        <div class="col-sm-6">
+          <h3>Map</h3>
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d202873.52810372662!2d-122.05823173190369!3d37.39222367577627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb70196a169e5%3A0x6078f2f122a44c38!2s970+Corte+Madera+Ave%2C+Sunnyvale%2C+CA+94085!5e0!3m2!1sen!2sus!4v1414025153723" width="600" height="450" frameborder="0" style="border:0"></iframe>
+          </div>
+        </div>
+      </div>
+      
+    </div> <!-- /container -->
+
+
+    <div class="container" id='resume-section'>
+      <div class="section-header section-header-4" style="background-image:url(image/bg/section-header-1.jpg);" >
+        <h1>RESUME</h1>
+      </div>
+      <div class="row skill-vis main-section">
+          <div id="skill-visualization">
+            <p>Visualization</p>
+          </div>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <div class="container" id='footer-section'>
+      <div class="row">
+        <p class="center">© Copyright 2014, Site Designed by Xin Liu, All Rights Reserved</p>
+        <p class="center"><a href="#welcome-section">Go To Top</a></p>
+      </div>
+    </div>
+
+    <div id="project-fixed">
+      <img id='fixed-close' src="image/close.png"/>
+      <div id='project-text'>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation" id='header-project'>
+
+              <div><h4 class="center">Project Title</h4></div>
+
+        </div><!-- End navbar -->
+        <div class='project-content'>
+          <img class="project-img" src='image/bg/section-header-1.jpg'></img>
+          <pre class='project-category'>
+            Project Type: Information Visualization
+            Time: April 2014 - May 2014
+            Main Roles: Designing, Programming
+            Development Tools: Python, Javascript/D3
+          </pre>
+          <img class="project-img" src='image/bg/section-header-1.jpg'></img>
+          <pre class='project-category'>
+            Project Type: Information Visualization
+            Time: April 2014 - May 2014
+            Main Roles: Designing, Programming
+            Development Tools: Python, Javascript/D3
+          </pre>
+          <img class="project-img" src='image/bg/section-header-1.jpg'></img>
+          <pre class='project-category'>
+            Project Type: Information Visualization
+            Time: April 2014 - May 2014
+            Main Roles: Designing, Programming
+            Development Tools: Python, Javascript/D3
+          </pre>
+          <img class="project-img" src='image/bg/section-header-1.jpg'></img>
+        </div>
+      </div><!-- End project-text -->
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/MyJs.js"></script>
+  </body>
+</html>
