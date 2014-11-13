@@ -1,4 +1,16 @@
+function getTitle(index){
+	title=["Nuwa","Info Visualization"]
+	$('#header-project h4').html(title[index])
+}
+function getContent(index){
+	projectindex=index
+	console.log(projectindex)
+	fileurl='project/'+index+'.html'
+	$(".project-content").load(fileurl)
+
+}
 window.onload=function(){
+	projectindex=0
 	// Fixed Top
 	$(document).scroll(function(){
 		if ($(this).scrollTop()>700){
@@ -153,8 +165,11 @@ window.onload=function(){
 		})
 	});
 
-	$('.project-list').each(function(){
+	$('.project-list').each(function(index){
 		$(this).click(function(){
+			// console.log(index)
+			getTitle(index)
+			getContent(1)
 			location.href='#works-section'
 			$('#project-fixed').css('display','inline')
 			$('#project-fixed').animate({
@@ -163,7 +178,20 @@ window.onload=function(){
 			$('body').css('overflow','hidden')
 		})
 	});
+	$('#fixed-close').hover(function(){
+		$(this).animate({
+			width:'40px',
+			top:'60px',
+			left:'-20px'
 
+		},100,'swing')
+	},function(){
+			$(this).animate({
+				width:'36px',
+				top:'62px',
+				left:'-18px'
+			},50,'linear')
+		});
 	$('#fixed-close').click(function(){
 		location.href='#works-section'
 		
@@ -175,10 +203,57 @@ window.onload=function(){
 		$('body').css('overflow','visible')
 
 	});
+	//project Arrow
 
+	$(".arrowleft").hover(function(){
+		$(this).animate({
+			'background-position-y':'8px'
+		},100,'swing')
+	},function(){
+		$(this).animate({
+			'background-position-y':'10px'
+		},100,'swing')
+	});
 
-	
+	$(".arrowright").hover(function(){
+		$(this).animate({
+			'background-position-y':'8px'
+		},100,'swing')
+	},function(){
+		$(this).animate({
+			'background-position-y':'10px'
+		},100,'swing')
+	});
+
+	// Resume Arrow
+	setTimeout(function(){
+		if ($(document).scrollTop()<700){
+			$('.resume').animate({
+				'top':'-147px'
+			},300,'swing',function(){
+				setTimeout(function(){
+					$(document).scroll(function(){
+						$('.resume').animate({
+							'height':'0',
+							'top':'0',
+							'opacity':'0'
+						},500,'linear')
+					})
+				},3000)
+				
+			})
+		}
+	},3000)
+
 };
+
+
+
+
+				
+			
+	
+
 
 $(window).load(function(){
    // PAGE IS FULLY LOADED  
@@ -205,4 +280,5 @@ function naviSelection(idx){
 	}
 	
 }
+
 

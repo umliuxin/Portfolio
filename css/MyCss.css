@@ -35,7 +35,11 @@ a,a:hover,a:link{
 }
 
 #welcome-section .logo img{
-	padding:0 0 0 22%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+	max-width: 280px;
 	margin-bottom: 20px;
 }
 
@@ -48,10 +52,11 @@ a,a:hover,a:link{
 .scrolldown{
 	margin-left: auto;
 	margin-right: auto;
-	width: 150px;
+	width: 200px;
 	height: 180px;
 	text-decoration: none;
-	background: url('../image/scroll-down.png') no-repeat 50% 40px;
+	background: url('../image/scroll-down1.png') no-repeat 50% 40px;
+	background-size: 20%;
 }
 
 .scrolldown h3{
@@ -59,6 +64,7 @@ a,a:hover,a:link{
 	margin-bottom: 15px;
 	padding-bottom: 5px;
 	text-decoration: none;
+	font-size: 14px;
 }
 
 /*End Header*/
@@ -77,11 +83,16 @@ a,a:hover,a:link{
 	color:#fff;
 	background-color: #494949;
 	height: 60px;
-	width: 160px;
+	width: 120px;
 }
 #brand-button img{
-	width: 100%;
-	height:auto;
+	width: 50%;
+	position: relative;
+	height: auto;
+	margin: 0 auto;
+	top:-7px;
+	display: block;
+
 }
 
 #navi-button li>a{
@@ -114,6 +125,22 @@ a,a:hover,a:link{
 
 }
 
+.resume{
+	/*background-color:re d;*/
+	width:130px;
+	height:147px;
+	position: absolute;
+	right:5px;
+	top :-847px;
+	background: url('../image/scroll-down1.png') no-repeat 55% 72px;
+	background-size: 30%;
+
+}
+.resume h4{
+	border-bottom:3px solid white;
+}
+
+
 /*End Section Header*/
 
 /*Work Section*/
@@ -129,17 +156,22 @@ a,a:hover,a:link{
 	opacity: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(250,250,250,0.7);
+	background-color: rgba(250,250,250,0.75);
 }
 .project-logo{
 	margin-right: auto;
 	margin-left: auto;
-	width: 110px;
+	width: 100px;
 	height: auto;
-	margin-top: 10%;
+	margin-top: 8%;
 }
 .project-detail h2{
 	color:#494949;
+	font-size: 20px;
+}
+.project-detail h4{
+	color: #494949;
+	font-size: 14px;
 }
 
 .project-1{
@@ -159,6 +191,42 @@ a,a:hover,a:link{
 .project-2:hover{
 	background-image:url(../image/project/infovis.jpg) !important;
 }
+
+.project-3{
+	background:url(../image/project/knowie-b.png) no-repeat center;
+	background-size: 100%;
+
+}
+.project-3:hover{
+	background-image:url(../image/project/knowie.png) !important;
+}
+
+.project-4{
+	background:url(../image/project/mlh-b.jpg) no-repeat center;
+	background-size: 100%;
+
+}
+.project-4:hover{
+	background-image:url(../image/project/mlh.jpg) !important;
+}
+
+.project-5{
+	background:url(../image/project/usgs-b.jpg) no-repeat center;
+	background-size: 110%;
+
+}
+.project-5:hover{
+	background-image:url(../image/project/usgs.jpg) !important;
+}
+
+.project-6{
+	background:url(../image/project/graphic-b.jpg) no-repeat center;
+	background-size: 120%;
+
+}
+.project-6:hover{
+	background-image:url(../image/project/graphic.jpg) !important;
+}
 /*End Work Section*/
 
 /*About Section*/
@@ -173,11 +241,18 @@ a,a:hover,a:link{
     margin: 20px auto 0 auto;
     background:url(../image/photo.jpg) no-repeat center;
     background-size: 250px 250px;
+    transition-duration: 0.8s;
+    transition-property: transform;
 }
+
+.circle-img:hover{
+	transform: rotate(360deg);
+}
+
 .social-img{
 	float: left;
-	width:90px;
-	height: 90px;
+	width:80px;
+	height: 80px;
 	border:2px solid #494949;
 	margin:5px 10px 10px 5px;
 	background-size: 100%;
@@ -189,24 +264,28 @@ a,a:hover,a:link{
 }
 .social-img-1:hover{
 	background-image: url(../image/social/facebook.png);
+	border-color: white;
 }
 .social-img-2{
 	background-image: url(../image/social/linkedin_t.png);
 }
 .social-img-2:hover{
+	border-color: white;
 	background-image: url(../image/social/linkedin.png);
 }
 .social-img-3{
 	background-image: url(../image/social/twitter_t.png);
 }
 .social-img-3:hover{
+	border-color: white;
 	background-image: url(../image/social/twitter.png);
 }
 .social-img-4{
-	background-image: url(../image/social/google_t.png);
+	background-image: url(../image/social/github_t.png);
 }
 .social-img-4:hover{
-	background-image: url(../image/social/google.png);
+	border-color: white;
+	background-image: url(../image/social/github.png);
 }
 .introduction{
 	font-size: 18px;
@@ -244,7 +323,7 @@ a,a:hover,a:link{
 /*Load Page*/
 #overlay{
 	width: 100%;
-	height: 700px;
+	height: 1200px;
 	background-color: rgba(255,255,255,1);
 	position: fixed;
 }
@@ -288,17 +367,59 @@ a,a:hover,a:link{
 	width: 94%;
 	left: 3%;
 }
+#header-project>div{
+	width:80%;
+	max-width: 900px;
+	margin: 0 auto;
+}
+.arrowleft,.arrowright{
+	float: left;
+	width:10%;
+	height: 48px;
+}
+.arrowleft{
+	background:url(../image/arrow-l.png) no-repeat 0% 10px;
+	background-size:  14px 28px;
+}
+.arrowright{
+	background:url(../image/arrow-r.png) no-repeat 100% 10px;
+	background-size: 14px 28px;
+}
 #header-project h4{
 	color: #494949;
+	width: 80%;
+	float: left;
+	padding-top: 5px;
 }
 .project-content{
-	width: 768px;
+	width:80%;
+	max-width: 900px;
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 60px;
 }
 .project-img{
-	width: 100%;
+	width: 80%;
 	height:auto;
+}
+.project-content h2{
+	color: #494949;
+}
+.project-content p{
+	color: #494949;
+	font-size: 16px;
+	font-weight: normal;
+	text-shadow: 0px 1px 1px #fff;
+	line-height: 115%;
+	margin-bottom: 15px;
+	letter-spacing: -0.025em;
+}
+.project-content pre{
+	width: 80%;
+	margin-bottom: 15px;
+}
+.project-content a.btn{
+	font-size: 15px;
+	text-shadow:none;
 }
 /*end project fixed*/
 
