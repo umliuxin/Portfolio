@@ -13,7 +13,9 @@ h1,h2,h3,h4{
 }
 p{
 	color:white;
-	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+	font-family: Monaco,Consolas,Helvetica,Frutiger,"Courier New",monospace;
+	letter-spacing: -0.03em;
+	
 }
 a,a:hover,a:link{
 	text-decoration: none;
@@ -65,6 +67,16 @@ a,a:hover,a:link{
 	padding-bottom: 5px;
 	text-decoration: none;
 	font-size: 14px;
+}
+
+#scrollbutton{
+	margin: 0 auto;
+	display: block;
+	width:270px;
+	background-color: transparent;
+	color: white;
+	border-width:2px;
+	border-color:white;
 }
 
 /*End Header*/
@@ -146,11 +158,22 @@ a,a:hover,a:link{
 /*Work Section*/
 .project-list{
 	height:250px;
-	min-width: 300px;
+	min-width: 320px;
 	border:1px solid #494949;
 	background-color: red;
 	width: 33.33333333%;
 	float: left;
+}
+@media screen and (max-width: 960px){
+	.project-list{
+		width: 50%;
+		min-width: 0;
+	}
+}
+@media screen and (max-width: 480px){
+	.project-list{
+		width: 100%;
+	}
 }
 .project-detail{
 	opacity: 0;
@@ -233,6 +256,21 @@ a,a:hover,a:link{
 .about-section{
 	background-color: #c4cec4;
 }
+.about-center{
+	margin: 0 auto;
+	display: block;
+	width:70%;
+}
+.about-social-center{
+	width: 100%;
+}
+.about-social-center div{
+	margin: 0 auto;
+	display: block;
+	width: 100%;
+	max-width: 400px;
+
+}
 .circle-img{
 	width: 200px;
     height: 200px;
@@ -251,9 +289,9 @@ a,a:hover,a:link{
 
 .social-img{
 	float: left;
-	width:80px;
-	height: 80px;
-	border:2px solid #494949;
+	width: 70px;
+	height: 70px;
+	border:2px solid white;
 	margin:5px 10px 10px 5px;
 	background-size: 100%;
 	background-repeat: no-repeat;
@@ -290,15 +328,24 @@ a,a:hover,a:link{
 .introduction{
 	font-size: 18px;
 	color: #494949;
+	text-shadow: 0px 1px 1px #fff;
 }
 #skill-visualization{
-	width: 100%;
-	height:600px;
-	background-color: gray;
+	width: 960px;
+	height:400px;
+	background-color: #c4cec4;
+	margin: 0 auto;
 }
 /*End About Section*/
 .contact-section{
 	background-color: #9c9b9b;
+}
+.contact-section h3,h4{
+	margin-bottom: 20px;
+}
+.contact-section p{
+	font-size: 18px;
+	margin-bottom: 20px;
 }
 .form-control{
 	margin-bottom: 25px;
@@ -324,9 +371,25 @@ a,a:hover,a:link{
 #overlay{
 	width: 100%;
 	height: 1200px;
-	background-color: rgba(255,255,255,1);
+	background-color: #e8ede8;
 	position: fixed;
 }
+#loading-loader{
+	width:30%;
+	max-width: 200px;
+	height:auto;
+	margin:200px auto 0;
+	display: block;
+}
+#overlay h3{
+	color: #494949;
+}
+
+.loader{
+
+}
+
+
 /*End Load Page*/
 
 /*project fixed*/
@@ -398,8 +461,9 @@ a,a:hover,a:link{
 	margin-top: 60px;
 }
 .project-img{
-	width: 80%;
+	width: 100%;
 	height:auto;
+	max-width: 700px;
 }
 .project-content h2{
 	color: #494949;
@@ -414,7 +478,8 @@ a,a:hover,a:link{
 	letter-spacing: -0.025em;
 }
 .project-content pre{
-	width: 80%;
+	width: 100%;
+	max-width: 700px;
 	margin-bottom: 15px;
 }
 .project-content a.btn{
@@ -427,3 +492,8 @@ a,a:hover,a:link{
 	background-color: #494949;
 	padding-top: 20px;
 }
+
+.DetailText{
+	width: 200px;
+}
+

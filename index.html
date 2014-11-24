@@ -8,14 +8,15 @@
     <meta name="author" content="">
     <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-    <title>Static Top Navbar Example for Bootstrap</title>
+    <title>Xin Liu</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/MyCss.css" rel="stylesheet">
-
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/ie-emulation-modes-warning.js"></script>
@@ -27,22 +28,26 @@
 
   <body>
     <div id="overlay">
-       Loading...
+      <img id='loading-loader' src="image/loader.gif">
+      <h3 class="center">A Huge Wave of <img class="loader" src='image/load/1.png'><img class="loader" src='image/load/2.png'><img class="loader" src='image/load/3.png'>is Apporaching</h3>
     </div>
+
     <div class="container" id='welcome-section'>
         <div class="logo">
           <img src="image/logo1.png" alt='I am Xin Liu'/>
           <h1 class="center">Hello, My name is Xin Liu</h1>
         </div>
         <div class="slogan">
-          <h2 class="center">I AM UX Designer and Web Developer 
+          <h2 class="center">I am a Web Developer and UX Designer
           </h2>
           <
         </div>
-        <a href='#works-section' >
-        <div class="scrolldown">
+        <a id="scrollbutton" href='#about-section' class="center btn btn-default btn-lg">
+       <!--  <div class="scrolldown">
           <h3 class="center">Scroll Down to View Portfolio</h3>
-        </div> </a> 
+        </div>  -->
+        WALK THROUGH
+        </a> 
     </div><!-- End container -->
     <!-- Static navbar -->
     <div class="navbar navbar-default navbar-static-top" role="navigation" id='header-navbar'>
@@ -58,19 +63,46 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" id='navi-button'>
-            <li><a href="#works-section">Works</a></li>
             <li><a href="#about-section">About</a></li>
+            <li><a href="#works-section">Works</a></li>
             <li><a href="#contact-section">Contact</a></li>
-            <li><a href="#resume-section">Resume</a></li>
+            <li><a href="Resume_Xin Liu.pdf" target="_blank">Resume</a></li>
           </ul>
         </div><!--/.nav-collapse -->
-        <div class="resume"><a href='#resume-section'><h4 class="center">In A Hurry?</h4><p class="center">Grab a Resume</p></a></div>
+        <div class="resume"><a href='Resume_Xin Liu.pdf' target='_blank'><h4 class="center">In A Hurry?</h4><p class="center">Grab a Resume</p></a></div>
       </div>
     </div>
     <!-- End Static navbar -->
 
+    
+
+    <div class="container" id='about-section'>
+      <div class="section-header section-header-1" style="background-image:url(image/bg/section-header-3.jpg);">
+        <h1>ABOUT</h1>
+      </div>
+      <div class="row about-section main-section">
+        <div class="circle-img"></div>
+        <div class="row" style="margin-top:20px; margin-bottom:20px;">
+          <div class="about-center">
+            <p class='introduction'>Hi, I am Xin Liu.
+
+I am passionate in web development and UX design. I am looking for a full-time postion right now. Through my study in Human Computer Interaction in University of Michigan, I realize how importance the user experience is to the success of one products. Understanding of human behavior and human psychology gives me a clear sight that access information on the internet and in information technology is like extension of our sight, hearing, smelling and feeling. A system with good user experience never violate the basic roles of how human being interact with the world. <br>
+
+<!-- The combination of web development and user experience knowledge gives me another view on how to create a user friendly webpage to let users do their tasks without unnecessary effort. Even though the technology keeping updating fast, I believe the way how human interacts with computer will be the key of accessing information world. -->
+<br><br></p>
+          </div>
+           
+        <div class="row skill-vis main-section">
+            <div id="skill-visualization">
+            </div>
+        </div>
+      </div>
+      
+    </div> <!-- /container -->
+
+
     <div class="container" id='works-section'>
-      <div class="section-header section-header-1" style="background-image:url(image/bg/section-header-1.jpg);" >
+      <div class="section-header section-header-2" style="background-image:url(image/bg/section-header-1.jpg);" >
         <h1>WORKS</h1>
       </div>
       <div class="row">
@@ -120,74 +152,61 @@
       </div>
     </div> <!-- /container -->
 
-    <div class="container" id='about-section'>
-      <div class="section-header section-header-2" style="background-image:url(image/bg/section-header-2.jpg);">
-        <h1>ABOUT</h1>
-      </div>
-      <div class="row about-section main-section">
-        <div class="circle-img"></div>
-        <div class="row" style="margin-top:20px; margin-bottom:20px;">
-          <div class="col-xs-1"></div>
-          <div class="col-xs-3">
-            <a href="https://www.facebook.com/profile.php?id=100003813605853" target='_blank' class='social-img social-img-1'></a>
-            <a href="https://www.linkedin.com/profile/view?id=213094119&trk=nav_responsive_tab_profile" class='social-img social-img-2' target='_blank'></a>
-            <a href="https://twitter.com/without_nth" class='social-img social-img-3' target='_blank'></a>
-            <a target='_blank' href="https://plus.google.com/115961391373383503520/about" class='social-img social-img-4'></a>
-          </div>
-          <div class="col-xs-7">
-            <p class='introduction'>Hi, </p>
-          </div>
-          <div class="col-xs-1"></div>
-        </div>
-        
-      </div>
-      
-    </div> <!-- /container -->
-
     <div class="container" id='contact-section'>
-      <div class="section-header section-header-3" style="background-image:url(image/bg/section-header-3.jpg);">
+      <div class="section-header section-header-3" style="background-image:url(image/bg/section-header-2.jpg);">
         <h1 style="width:220px;">CONTACT</h1>
       </div>
       <div class="row contact-section main-section">
+        <div class="col-sm-12">
+          <h3>Get In Touch</h3>
+          <h4>I'd love to hear from you. Please feel free to contact me via any of the contact</h4>
+        </div>
         <div class="col-sm-6">
-          <h3>Send Me A Message</h3>
-          <p>Aenean non lectus luctus, aliquam lorem id, mollis sem. Vivamus suscipit aliquam ligula, quis porta metus pharetra eget. Aenean sed dictum est</p>
-          <form class="form-signin" role="form">
-            <input type="text" class="form-control" placeholder="Name" required="">
-            <input type="email" class="form-control" placeholder="Email" required="">
-            <textarea class="form-control" placeholder='Message' rows="5" id="comment"></textarea>
+          
+          <h4>SEND ME A MESSAGE</h4>
+          <form method="POST" class="form-signin" role="form" action="#" id='messageform' target="_Parent">
+            <input type="text" class="form-control" placeholder="Name" required="" name='name'>
+            <input type="email" class="form-control" placeholder="Email" required="" name='email'>
+            <textarea class="form-control" placeholder='Message' rows="5" id="comment" name='message'></textarea>
             
             <button class="btn btn-lg btn-primary btn-block form-control" id='submit-button' type="submit">Send Message</button>
           </form>
         </div>
-        <div class="col-sm-6">
-          <h3>Map</h3>
-          <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d202873.52810372662!2d-122.05823173190369!3d37.39222367577627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb70196a169e5%3A0x6078f2f122a44c38!2s970+Corte+Madera+Ave%2C+Sunnyvale%2C+CA+94085!5e0!3m2!1sen!2sus!4v1414025153723" width="600" height="450" frameborder="0" style="border:0"></iframe>
-          </div>
+        <div class="col-sm-6" style="margin-bottom:200px;">
+          <h4>WHERE ELSE CAN FIND ME</h4>
+            <div>
+              <h4><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+              734-546-6168</h4>
+              <h4><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+              umliuxin@umich.edu</h4>
+            </div>
+            <div>
+              <a href="https://www.facebook.com/profile.php?id=100003813605853" target='_blank' class='social-img social-img-1'></a>
+              <a href="https://www.linkedin.com/profile/view?id=213094119&trk=nav_responsive_tab_profile" class='social-img social-img-2' target='_blank'></a>
+              <a href="https://twitter.com/liuxin1009" class='social-img social-img-3' target='_blank'></a>
+              <a target='_blank' href="https://github.com/umliuxin" class='social-img social-img-4'></a>
+            </div>
+         
         </div>
       </div>
+    </div>
       
-    </div> <!-- /container -->
+  </div> <!-- /container -->
 
 
-    <div class="container" id='resume-section'>
+    <!-- <div class="container" id='resume-section'>
       <div class="section-header section-header-4" style="background-image:url(image/bg/section-header-1.jpg);" >
         <h1>RESUME</h1>
       </div>
-      <div class="row skill-vis main-section">
-          <div id="skill-visualization">
-            <p>Visualization</p>
-          </div>
-      </div>
+      
 
-    </div> <!-- /container -->
+    </div> --> <!-- /container -->
 
 
     <div class="container" id='footer-section'>
       <div class="row">
         <p class="center">© Copyright 2014, Site Designed by Xin Liu, All Rights Reserved</p>
-        <p class="center"><a href="#welcome-section">Go To Top</a></p>
+        <p class="center"><a href="#welcome-section">Top</a></p>
       </div>
     </div>
 
@@ -210,7 +229,12 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
     <script src="js/jquery.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/skill-vis.js"></script>
     <script src="js/MyJs.js"></script>
+
+    
   </body>
 </html>
