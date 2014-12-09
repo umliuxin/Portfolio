@@ -141,28 +141,36 @@ window.onload=function(){
 			getContent(index)
 			location.href='#works-section'
 			$('#project-fixed').css('display','inline')
+			// $('#project-fixed').css('opacity',1)
+
 			$('#project-fixed').animate({
 			'opacity':'1'
 		},200,'linear')
-			$('body').css('overflow','hidden')
-			$('body').ontouchmove = function(e){ e.preventDefault(); }
+
+			// $('body').on("touchmove",false);
+			$('#project-text').bind("touchmove",function(e){
+				e.stopPropagation();
+			})
+			$('body').css('overflow','hidden');
+			// $('body').addClass('disable-scroll')
+
 		})
 	});
-	$('#fixed-close').hover(function(){
-		$('body').ontouchmove = function(e){ return true; }
-		$(this).animate({
-			width:'40px',
-			top:'60px',
-			left:'-20px'
+	// $('#fixed-close').hover(function(){
+		
+	// 	$(this).animate({
+	// 		width:'50px',
+	// 		top:'59px',
+	// 		left:'-24px'
 
-		},100,'swing')
-	},function(){
-			$(this).animate({
-				width:'36px',
-				top:'62px',
-				left:'-18px'
-			},50,'linear')
-		});
+	// 	},100,'swing')
+	// },function(){
+	// 		$(this).animate({
+	// 			width:'48px',
+	// 			top:'60px',
+	// 			left:'-25px'
+	// 		},50,'linear')
+	// 	});
 	$('#fixed-close').click(function(){
 		location.href='#works-section'
 		
@@ -171,7 +179,9 @@ window.onload=function(){
 		},200,'linear',function(){
 			$(this).css('display','none')
 		})
-		$('body').css('overflow','visible')
+		// $('body').on("touchmove",true);
+		$('body').css('overflow','auto')
+		// $('body').removeClass('disable-scroll')
 
 	});
 	//project Arrow

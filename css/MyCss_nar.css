@@ -41,6 +41,16 @@ h4{
 	left: 0%;
 	z-index: 2000;
 }
+#header-project>div{
+	width:69%;
+}
+.arrowleft,.arrowright{
+	width: 8%;
+}
+#fixed-close{
+	top: 60px;
+	left: -43px;
+}
 .project-content{
 	width:90%;
 	max-width: 1000px;
