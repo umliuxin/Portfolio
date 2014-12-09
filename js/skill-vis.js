@@ -30,6 +30,7 @@ window.onload=function(){
 				  {tag:'Good',y:100},{tag:'Familiar',y:50}]
 
 	var width = 960
+		nar_width = 480
 		oheight=400
 	    height = 700,
 	    radius = 180;
@@ -47,10 +48,14 @@ window.onload=function(){
 	    		.outerRadius(radius-25);
 	var color = d3.scale.category20();    		
 
-
+	var svg1 = d3.select("#narrow-visualization").append("svg")
+	    .attr("width", nar_width)
+	    .attr("height", oheight);
+	
 	var svg = d3.select("#skill-visualization").append("svg")
 	    .attr("width", width)
-	    .attr("height", oheight)
+	    .attr("height", oheight);
+    
 	//Radius Gradient color
 	var grads = svg.append("defs").selectAll("radialGradient").data(dataset.skill)
 	    .enter().append("radialGradient")
@@ -136,6 +141,55 @@ window.onload=function(){
 	    .attr("transform", "translate("+width/2+",220)")
 
 	var skillText=skillTextGroups.append('text')
+		.text(function(d,i){return dataset.skill[i]})
+		.attr("transform", function(d) {
+			return "translate(" + arc.centroid(d) + ")"; })
+    	.attr("text-anchor", "middle")
+    	.style({'cursor':'default'})
+    	.attr("font-family", "sans-serif")
+        .attr("font-size", "15px")
+        .attr("fill", "#666")
+
+    var n_circlegroup= svg1.append('g')
+			
+	// Rotated Circle
+
+	var n_path = n_circlegroup.append('g').selectAll("path")
+	    .data(pie(dataset.percent))
+	    .enter().append("path")
+	    .attr("fill", function(d, i) {return dataset.color[i]})
+	    .attr("d", arc)
+	    .attr("transform", "translate("+width/2+",220)")
+	//Out Circle
+	var n_outcircle= n_circlegroup.append('g')
+	for (var i = 0; i < dataset.percent.length; i++) {
+		idx=i+1
+		// console.log(dataset.added[i]/100)
+		n_arcs=d3.svg.arc()
+			.innerRadius(radius-20)
+			.outerRadius(radius-15)
+			.startAngle(((dataset.added[i]+1)/100)*2*(Math.PI))
+			.endAngle(((dataset.added[i+1]-1)/100)*2*(Math.PI))
+		n_outcircle.append("path")
+			.attr('d',n_arcs)
+			.attr('fill','#494949')
+			.attr("transform", "translate("+width/2+",220)")
+	};
+
+	var n_ourcir=n_outcircle.append('circle')
+				.attr('cx',0)
+				.attr('cy',0).attr('r',radius-2)
+				.style('stroke-width',3)
+				.style('stroke','#494949').style('fill','none')
+				.attr("transform","translate("+width/2+",220)")
+
+	//Text in path
+	var n_skillTextGroups = n_circlegroup.append('g').selectAll("g")
+	    .data(pie(dataset.percent))
+	    .enter().append('g')
+	    .attr("transform", "translate("+width/2+",220)")
+
+	var n_skillText=n_skillTextGroups.append('text')
 		.text(function(d,i){return dataset.skill[i]})
 		.attr("transform", function(d) {
 			return "translate(" + arc.centroid(d) + ")"; })

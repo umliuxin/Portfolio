@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- <link rel="icon" href="../../favicon.ico"> -->
@@ -15,6 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/MyCss.css" rel="stylesheet">
+    <link rel="stylesheet" media="Screen and (max-width:480px)" href="css/MyCss_nar.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -25,12 +27,12 @@
     <script src="js/ie10-viewport-bug-workaround.js"></script>
 
   </head>
-
-  <body>
-    <div id="overlay">
+  <div id="overlay">
       <img id='loading-loader' src="image/loader.gif">
       <h3 class="center">A Huge Wave of <img class="loader" src='image/load/1.png'><img class="loader" src='image/load/2.png'><img class="loader" src='image/load/3.png'>is Apporaching</h3>
-    </div>
+  </div>
+  <body>
+    
 
     <div class="container" id='welcome-section'>
         <div class="logo">
@@ -84,20 +86,15 @@
         <div class="circle-img"></div>
         <div class="row" style="margin-top:20px; margin-bottom:20px;">
           <div class="about-center">
-            <p class='introduction'>Hi, I am Xin Liu.
-
-I am passionate in web development and UX design. I am looking for a full-time postion right now. Through my study in Human Computer Interaction in University of Michigan, I realize how importance the user experience is to the success of one products. Understanding of human behavior and human psychology gives me a clear sight that access information on the internet and in information technology is like extension of our sight, hearing, smelling and feeling. A system with good user experience never violate the basic roles of how human being interact with the world. <br>
-
-<!-- The combination of web development and user experience knowledge gives me another view on how to create a user friendly webpage to let users do their tasks without unnecessary effort. Even though the technology keeping updating fast, I believe the way how human interacts with computer will be the key of accessing information world. -->
-<br><br></p>
+            <p class='introduction'>Hi, I am Xin Liu.<br>I am passionate in web development and UX design. I am looking for a full-time postion right now. Through my study in Human Computer Interaction in University of Michigan, I realize how importance the user experience is to the success of one products. Understanding of human behavior and human psychology gives me a clear sight that access information on the internet and in information technology is like extension of our sight, hearing, smelling and feeling. A system with good user experience never violate the basic roles of how human being interact with the world. <br><!-- The combination of web development and user experience knowledge gives me another view on how to create a user friendly webpage to let users do their tasks without unnecessary effort. Even though the technology keeping updating fast, I believe the way how human interacts with computer will be the key of accessing information world. --><br><br></p>
           </div>
            
         <div class="row skill-vis main-section">
-            <div id="skill-visualization">
-            </div>
+            <div id="skill-visualization"></div>
+            <div id="narrow-visualization"></div>
         </div>
       </div>
-      
+      </div>
     </div> <!-- /container -->
 
 
@@ -230,9 +227,7 @@ I am passionate in web development and UX design. I am looking for a full-time p
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
     <script src="js/jquery.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
-
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/skill-vis.js"></script>
     <script src="js/MyJs.js"></script>
 
     

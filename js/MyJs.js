@@ -22,28 +22,13 @@ window.onload=function(){
 			$('#header-navbar').addClass('navbar-static-top')
 			$('body').css('margin-top',0)
 		}});
-	// scrolldown
-	$('.scrolldown').hover(function(){
-		$('.scrolldown').animate({
-			'background-position-y':'70px'
-		},70,'linear')
-		$('.scrolldown').animate({
-			'background-position-y':'50px'
-		},30,'linear')
-		$('.scrolldown').animate({
-			'background-position-y':'70px'
-		},30,'linear')
-		
-
-	},function(){
-		$('.scrolldown').animate({
-			'background-position-y':'40px'
-		},50,'linear')
-
-	});
-
+	
+	//Narrow Header Selection
+	$('#navi-button>li>a').click(function(){
+		$('.navbar-collapse').removeClass('in')
+	})
 	// Work header
-	var scrollflag1=$('.section-header-1').offset().top-60;
+	var scrollflag1=$('#about-section').offset().top-60;
 	$(document).scroll(function(){
 		if ($(this).scrollTop()<scrollflag1){
 			var height=$(this).scrollTop()
@@ -158,11 +143,13 @@ window.onload=function(){
 			$('#project-fixed').css('display','inline')
 			$('#project-fixed').animate({
 			'opacity':'1'
-		},300,'linear')
+		},200,'linear')
 			$('body').css('overflow','hidden')
+			$('body').ontouchmove = function(e){ e.preventDefault(); }
 		})
 	});
 	$('#fixed-close').hover(function(){
+		$('body').ontouchmove = function(e){ return true; }
 		$(this).animate({
 			width:'40px',
 			top:'60px',
@@ -181,7 +168,7 @@ window.onload=function(){
 		
 		$('#project-fixed').animate({
 			'opacity':'0'
-		},300,'linear',function(){
+		},200,'linear',function(){
 			$(this).css('display','none')
 		})
 		$('body').css('overflow','visible')
@@ -292,6 +279,7 @@ window.onload=function(){
 	var arc = d3.svg.arc()
 	    .innerRadius(radius - 140)
 	    .outerRadius(radius - 50);
+
 	var arc1=d3.svg.arc()
 	    		.innerRadius(radius-179)
 	    		.outerRadius(radius-25);
@@ -302,12 +290,11 @@ window.onload=function(){
 		if (i==2){return "#3c703b"}
 		if (i==3){return "#cca62e"}
 	}
-
-	var svg = d3.select("#skill-visualization").append("svg")
-	    .attr("width", width)
-	    .attr("height", oheight)
+	var colorsvg=d3.select('.skill-vis').append('svg')
+		.attr("width", 0)
+	    .attr("height", 0)
 	//Radius Gradient color
-	var grads = svg.append("defs").selectAll("radialGradient").data(dataset.skill)
+	var grads = colorsvg.append("defs").selectAll("radialGradient").data(dataset.skill)
 	    .enter().append("radialGradient")
 	    .attr("gradientUnits", "userSpaceOnUse")
 	    .attr("cx", 0)
@@ -328,7 +315,7 @@ window.onload=function(){
 	    })
 	    .attr("stop-opacity", 0.8);
 	//Linear Gradient Color
-	var lgrads = svg.append("defs").selectAll("linearGradient").data(dataset.skill)
+	var lgrads = colorsvg.append("defs").selectAll("linearGradient").data(dataset.skill)
 	    .enter().append("linearGradient")
 	    .attr("x1", '50%')
 	    .attr("x2", '50%')
@@ -351,6 +338,13 @@ window.onload=function(){
 	    .attr("stop-opacity", 0.8);
 
 
+	var svg = d3.select("#skill-visualization").append("svg")
+	    .attr("width", width)
+	    .attr("height", oheight)
+	var svg1 = d3.select("#narrow-visualization").append("svg")
+	    .attr("width", 480)
+	    .attr("height", oheight)
+	
 	var circlegroup= svg.append('g')
 			
 	// Rotated Circle
@@ -422,7 +416,82 @@ window.onload=function(){
         .attr("fill", "#e8ede8")
         .attr('opacity','0')
 
+    //Narrow vis
+    var ncirclegroup= svg1.append('g')
+			
+	// Rotated Circle
 
+	var npath = ncirclegroup.append('g').selectAll("path")
+	    .data(pie(dataset.percent))
+	    .enter().append("path")
+	    .attr("fill", function(d, i) {return dataset.color[i]})
+	    .attr("d", arc)
+	    .attr("transform", "translate(240,220)")
+	//Out Circle
+	var noutcircle= ncirclegroup.append('g')
+	for (var i = 0; i < dataset.percent.length; i++) {
+		idx=i+1
+		// console.log(dataset.added[i]/100)
+		narcs=d3.svg.arc()
+			.innerRadius(radius-20)
+			.outerRadius(radius-15)
+			.startAngle(((dataset.added[i]+1)/100)*2*(Math.PI))
+			.endAngle(((dataset.added[i+1]-1)/100)*2*(Math.PI))
+		noutcircle.append("path")
+			.attr('d',narcs)
+			.attr('fill','#494949')
+			.attr("transform", "translate(240,220)")
+	};
+
+	var nourcir=noutcircle.append('circle')
+				.attr('cx',0)
+				.attr('cy',0).attr('r',radius-2)
+				.style('stroke-width',3)
+				.style('stroke','#494949').style('fill','none')
+				.attr("transform","translate(240,220)")
+
+	//Text in path
+	var nskillTextGroups = ncirclegroup.append('g').selectAll("g")
+	    .data(pie(dataset.percent))
+	    .enter().append('g')
+	    .attr("transform", "translate(240,220)")
+
+	var nskillText=nskillTextGroups.append('text')
+		.text(function(d,i){return dataset.skill[i]})
+		.attr("transform", function(d) {
+			return "translate(" + arc.centroid(d) + ")"; })
+    	.attr("text-anchor", "middle")
+    	.style({'cursor':'default'})
+    	.attr("font-family", "sans-serif")
+        .attr("font-size", "15px")
+        .attr("fill", "#494949")
+
+    //Animation
+    npath.transition().delay(100).duration(400)
+    	.attr('transform','translate(240,220)rotate(120)')
+
+    nskillTextGroups.transition().duration(400).delay(100).attr('transform','translate(240,220)rotate(120)')
+    nskillText.transition().duration(400).delay(100).attr("transform", function(d) {
+			return "translate(" + arc.centroid(d) + ")rotate(240)"; })
+
+    noutcircle.selectAll('path').transition().duration(400).delay(100).attr('transform','translate(240,220)rotate(120)')
+
+    //Click
+	npath.on('click',function(d,i){
+		degree=dataset.degree[i]
+		npath.transition().duration(400)
+			.attr('d',arc)
+			.attr('transform','translate(240,220)rotate('+degree+')')
+		nskillTextGroups.transition().duration(400).attr('transform','translate(240,220)rotate('+degree+')')
+	    nskillText.transition().duration(350).attr("transform", function(d) {
+	    		deg=360-degree
+				return "translate(" + arc.centroid(d) + ")rotate("+deg+")"; })
+	    noutcircle.selectAll('path').transition().duration(400).attr('transform','translate(240,220)rotate('+degree+')')
+		d3.select(this).transition().duration(400).delay(400).attr('d',arc1)
+		
+		})
+	// End Narrow Vis
+    
     //Animation
     path.transition().delay(100).duration(400)
     	.attr('transform','translate('+width/2+',220)rotate(120)')

@@ -87,6 +87,7 @@ a,a:hover,a:link{
 }
 #header-navbar{
 	padding: 0 15px;
+	min-height: 60px;
 	background-color: rgba(255,255,255,0.95);
 }
 
@@ -106,7 +107,10 @@ a,a:hover,a:link{
 	display: block;
 
 }
-
+.navbar-toggle{
+	margin-top:13px;
+	margin-bottom:13px;
+}
 #navi-button li>a{
 	font-size: 16px;
 	padding: 18px 20px;
@@ -121,7 +125,7 @@ a,a:hover,a:link{
 	height:210px;
 	background-repeat: no-repeat;
 	background-position: center -10px;
-	background-size: 130%;/*Change in different width*/
+	background-size: 150%;/*Change in different width*/
 }
 
 .section-header h1{
@@ -336,6 +340,33 @@ a,a:hover,a:link{
 	background-color: #c4cec4;
 	margin: 0 auto;
 }
+#narrow-visualization{
+	width:480px;
+	height:400px;
+	background-color: #c4cec4;
+	margin: 0 auto;
+	display: none;
+}
+@media screen and (max-width:960px) and (min-width: 480px){
+	#skill-visualization{
+		display: none;
+	}
+	#narrow-visualization{
+		display: block;
+	}
+}
+@media screen and (max-width: 480px){
+	#narrow-visualization{
+		display: none;
+	}
+	#skill-visualization{
+		display: none;
+	}
+	.row .main-section{
+		min-height: 10px;
+	}
+
+}
 /*End About Section*/
 .contact-section{
 	background-color: #9c9b9b;
@@ -373,6 +404,7 @@ a,a:hover,a:link{
 	height: 1200px;
 	background-color: #e8ede8;
 	position: fixed;
+	z-index: 1050;
 }
 #loading-loader{
 	width:30%;
