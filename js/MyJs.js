@@ -26,6 +26,12 @@ window.onload=function(){
 	//Narrow Header Selection
 	$('#navi-button>li>a').click(function(){
 		$('.navbar-collapse').removeClass('in')
+		$('#project-fixed').animate({
+			'opacity':'0'
+		},200,'linear',function(){
+			$(this).css('display','none')
+		})
+		$('body').css('overflow','auto')
 	})
 	// Work header
 	var scrollflag1=$('#about-section').offset().top-60;
@@ -119,18 +125,27 @@ window.onload=function(){
 				},50,'linear')
 
 			}
-			
-			
 		}
 	})
-
+	$('#brand-button').click(function(){
+		$('#project-fixed').animate({
+			'opacity':'0'
+		},200,'linear',function(){
+			$(this).css('display','none')
+		})
+		$('body').css('overflow','auto')
+	})
 	// Project-list
 	$('.project-list').each(function(){
 		$(this).hover(function(){
 			$(this).find('.project-detail').animate({
 			'opacity':'1'
-		},300,'linear')},function(){
+		},300,'linear');
+			$(this).find('.project-title').css('opacity','0')
+
+		},function(){
 			$(this).find('.project-detail').animate({'opacity':'0'},200,'swing');
+			$(this).find('.project-title').css('opacity','1')
 		})
 	});
 
@@ -156,21 +171,7 @@ window.onload=function(){
 
 		})
 	});
-	// $('#fixed-close').hover(function(){
-		
-	// 	$(this).animate({
-	// 		width:'50px',
-	// 		top:'59px',
-	// 		left:'-24px'
 
-	// 	},100,'swing')
-	// },function(){
-	// 		$(this).animate({
-	// 			width:'48px',
-	// 			top:'60px',
-	// 			left:'-25px'
-	// 		},50,'linear')
-	// 	});
 	$('#fixed-close').click(function(){
 		location.href='#works-section'
 		

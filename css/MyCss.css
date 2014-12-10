@@ -29,7 +29,7 @@ a,a:hover,a:link{
 
 #welcome-section{
 	height: 700px;
-	background:url('../image/bg/welcome.png') no-repeat center center;
+	background:url('../image/bg/welcome.jpg') no-repeat center center;
 }
 
 #welcome-section .logo{
@@ -193,13 +193,22 @@ a,a:hover,a:link{
 	height: auto;
 	margin-top: 8%;
 }
-.project-detail h2{
+.project-detail h2,.project-title h2{
 	color:#494949;
 	font-size: 20px;
 }
 .project-detail h4{
 	color: #494949;
 	font-size: 14px;
+}
+.project-title{
+	width:100%;
+	height: auto;
+	padding:3px 0 5px 0;
+	top:-60px;
+	position: relative;
+	z-index: 99;
+	background-color: rgba(250,250,250,0.75)
 }
 
 .project-1{
@@ -221,12 +230,12 @@ a,a:hover,a:link{
 }
 
 .project-3{
-	background:url(../image/project/knowie-b.png) no-repeat center;
+	background:url(../image/project/knowie-b.jpg) no-repeat center;
 	background-size: 100%;
 
 }
 .project-3:hover{
-	background-image:url(../image/project/knowie.png) !important;
+	background-image:url(../image/project/knowie.jpg) !important;
 }
 
 .project-4{
@@ -282,8 +291,8 @@ a,a:hover,a:link{
     border: 3px solid #494949;
     border-radius: 50%;
     margin: 20px auto 0 auto;
-    background:url(../image/photo.jpg) no-repeat center;
-    background-size: 250px 250px;
+    background:url(../image/photo1.jpg) no-repeat center;
+    background-size: 300px 300px;
     transition-duration: 0.8s;
     transition-property: transform;
 }
